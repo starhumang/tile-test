@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper SYSTEM "path/mybatis-3-mapper.dtd">
+<mapper namespace="co.yedam.list.mapper.ListMapper">
+
+<!-- 전체조회 -->
+<select id="selectList" resultType="co.yedam.list.service.ListVO">
+	SELECT * FROM TBL_PRODUCT ORDER BY PROD_CODE
+</select>
+
+<!-- 하나 조회 -->
+<select id="select" resultType="co.yedam.list.service.ListVO"
+					parameterType="String">
+	SELECT * FROM TBL_PRODUCT WHERE PROD_CODE = #{prodCode}				
+</select>
+
+</mapper>
