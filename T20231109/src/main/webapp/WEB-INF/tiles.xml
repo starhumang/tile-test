@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tiles-definitions SYSTEM "path/tiles-config_3_0.dtd">
 
 <tiles-definitions>
+   <definition name="listpage" template="/WEB-INF/layout/template.jsp"> 
+      <put-attribute name="header" value="/WEB-INF/layout/header.jsp"/>
+      <put-attribute name="footer" value="/WEB-INF/layout/footer.jsp"/>
+   </definition>
+   
+   <definition name="WILDCARD:list/*" extends="listpage">
+      <put-attribute name="body" value ="/WEB-INF/list/{1}.jsp"/>
+   </definition>
 
-	<definition name="ListPage" template="/WEB-INF/product/productList.jsp">
-	<put-attribute name="header" value="/WEB-INF/product/header.jsp"></put-attribute>
-	<put-attribute name="menu" value="/WEB-INF/product/menu.jsp"></put-attribute>
-	<put-attribute name="body" value="/WEB-INF/product/body.jsp"></put-attribute>
-	<put-attribute name="footer" value="/WEB-INF/product/footer.jsp"></put-attribute>
-	</definition>
-	
-	<definition name="WILDCARD:list/*" extends="ListPage">
-	<put-attribute name="body" value="/WEB-INF/list/{1}.jsp"></put-attribute>
-	</definition>
-
+	<definition name="WILDCARD:info/*" extends="listpage">
+      	<put-attribute name="body" value ="/WEB-INF/info/{1}.jsp"/>
+   	</definition>
 </tiles-definitions>
